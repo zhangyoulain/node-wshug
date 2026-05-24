@@ -2,299 +2,179 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>保护海洋 · Protect the Ocean</title>
+  <title>保护海洋 · 静态网页示例</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* —— 全站样式 —— */
-    :root {
-      --primary: #0077b6;
-      --primary-dark: #023e8a;
-      --accent: #00b4d8;
-      --bg: #f5f7fb;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --white: #ffffff;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f3f6fb;
+      color: #1f2933;
       line-height: 1.6;
     }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* —— 导航栏 —— */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(2, 62, 138, 0.96);
-      backdrop-filter: blur(10px);
-      color: var(--white);
+      background: linear-gradient(135deg, #005f99, #0099cc);
+      color: #fff;
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .nav {
-      max-width: 1100px;
+    header h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.3rem;
+    }
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #d0d7e2;
+    }
+    nav ul {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 0.8rem 1.5rem;
+      list-style: none;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .nav-logo span.icon {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #00b4d8, #0077b6);
-      display: inline-flex;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0.6rem 1.2rem;
       justify-content: center;
     }
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
+    nav a {
+      text-decoration: none;
+      color: #005f99;
       font-size: 0.95rem;
-    }
-    .nav-links a { color: #e5f2ff; }
-    .nav-links a:hover { color: #ffffff; }
-
-    /* —— Hero —— */
-    .hero {
-      background: linear-gradient(135deg, #001d3d, #003566);
-      color: var(--white);
-      padding: 4.5rem 1.5rem 4rem;
-    }
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-    .hero-title {
-      font-size: 2.4rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-    .hero-subtitle {
-      font-size: 1.05rem;
-      color: #d1e4ff;
-      margin-bottom: 1.8rem;
-    }
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.8rem;
-    }
-    .badge {
-      font-size: 0.8rem;
-      padding: 0.25rem 0.7rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
     }
-    .btn {
-      padding: 0.7rem 1.4rem;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      display: inline-block;
+    nav a:hover {
+      background: #e0f2ff;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: #002233;
-    }
-    .btn-outline {
-      border: 1px solid #e0f4ff;
-      color: #e0f4ff;
-    }
-
-    /* —— 主体 —— */
     main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 4rem;
+      max-width: 960px;
+      margin: 1.8rem auto 2.5rem;
+      padding: 0 1.2rem;
     }
-    section { margin-bottom: 3rem; }
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: var(--primary-dark);
-    }
-    .section-intro {
-      font-size: 0.98rem;
-      color: var(--muted);
-      margin-bottom: 1.6rem;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.8rem;
-    }
-    .card {
-      background: var(--white);
-      border-radius: 14px;
+    section {
+      background: #ffffff;
+      border-radius: 10px;
       padding: 1.4rem 1.5rem;
-      border: 1px solid rgba(148, 163, 184, 0.25);
+      margin-bottom: 1.4rem;
+      box-shadow: 0 4px 10px rgba(15,23,42,0.06);
+      border: 1px solid #e1e5f0;
     }
-
-    /* —— 页脚 —— */
+    section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: #004b7a;
+    }
+    section p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      margin-left: 1.2rem;
+      font-size: 0.95rem;
+    }
+    ul li + li {
+      margin-top: 0.25rem;
+    }
+    .tagline {
+      font-size: 0.95rem;
+      color: #0f172a;
+      font-weight: 600;
+      margin-top: 0.4rem;
+    }
+    .highlight {
+      color: #0077b6;
+      font-weight: 600;
+    }
+    .actions-list li::marker {
+      color: #0077b6;
+    }
     footer {
-      background: #020617;
-      color: #9ca3af;
-      padding: 1.8rem 1.5rem;
-      font-size: 0.85rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+      padding: 1.2rem 0 1.6rem;
+      border-top: 1px solid #d0d7e2;
+      background: #f9fafb;
     }
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.6rem; }
+      main { padding: 0 0.9rem; }
     }
   </style>
 </head>
-
 <body>
-  <!-- —— 导航栏 —— -->
   <header>
-    <nav class="nav">
-      <div class="nav-logo">
-        <span class="icon">🌊</span>
-        <span>OceanGuard · 海洋守护</span>
-      </div>
-      <div class="nav-links">
-        <a href="#home">首页</a>
-        <a href="#importance">海洋的重要性</a>
-        <a href="#threats">威胁</a>
-        <a href="#actions">行动</a>
-        <a href="#cases">案例</a>
-        <a href="#join">加入我们</a>
-      </div>
-    </nav>
+    <h1>保护海洋 · 守护蓝色星球</h1>
+    <p>海洋是地球最大的生命系统，保护海洋，就是保护我们自己。</p>
   </header>
 
-  <!-- —— Hero —— -->
-  <section class="hero" id="home">
-    <div class="hero-inner">
-      <div>
-        <h1 class="hero-title">守护蓝色星球，从你我开始</h1>
-        <p class="hero-subtitle">
-          海洋覆盖地球 70% 的面积，是生命的摇篮，也是气候的调节器。
-        </p>
-        <div class="hero-badges">
-          <span class="badge">50%+ 地球氧气来自海洋</span>
-          <span class="badge">30 亿人口依赖海洋</span>
-          <span class="badge">吸收 25% CO₂ 排放</span>
-        </div>
-        <a href="#actions" class="btn btn-primary">立即行动</a>
-        <a href="#importance" class="btn btn-outline">了解更多</a>
-      </div>
-    </div>
-  </section>
+  <nav>
+    <ul>
+      <li><a href="#importance">海洋的重要性</a></li>
+      <li><a href="#threats">海洋面临的威胁</a></li>
+      <li><a href="#actions">我们能做什么</a></li>
+      <li><a href="#future">面向未来</a></li>
+    </ul>
+  </nav>
 
-  <!-- —— 主体内容 —— -->
   <main>
-
-    <!-- 海洋的重要性 -->
     <section id="importance">
-      <h2 class="section-title">海洋为何重要？</h2>
-      <p class="section-intro">海洋是地球生命系统的核心，调节气候、生产氧气、吸收碳排放。</p>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>气候调节</h3>
-          <p>海洋吸收 90% 的全球增温热量，是地球最大的气候缓冲器。</p>
-        </div>
-        <div class="card">
-          <h3>生命支持</h3>
-          <p>海洋浮游植物产生超过一半的氧气，是生命的基础。</p>
-        </div>
-      </div>
+      <h2>一、海洋为何如此重要？</h2>
+      <p>海洋覆盖了地球约 <span class="highlight">70%</span> 的面积，是地球气候、生态与人类社会的基础。</p>
+      <ul>
+        <li><span class="highlight">气候调节：</span>海洋吸收大量二氧化碳和热量，减缓全球变暖。</li>
+        <li><span class="highlight">氧气来源：</span>海洋浮游植物产生了地球约一半的氧气。</li>
+        <li><span class="highlight">生物多样性：</span>无数鱼类、珊瑚、海龟、鲸豚等在此繁衍生息。</li>
+        <li><span class="highlight">经济价值：</span>渔业、航运、旅游等“蓝色经济”支撑着全球发展。</li>
+      </ul>
+      <p class="tagline">没有健康的海洋，就没有可持续的未来。</p>
     </section>
 
-    <!-- 威胁 -->
     <section id="threats">
-      <h2 class="section-title">海洋正面临的威胁</h2>
-      <p class="section-intro">塑料污染、过度捕捞、酸化、升温等正在破坏海洋生态。</p>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>塑料污染</h3>
-          <p>每年 800 万吨塑料进入海洋，危害海洋生物与人类健康。</p>
-        </div>
-        <div class="card">
-          <h3>过度捕捞</h3>
-          <p>全球 34% 鱼类资源不可持续，食物链受到严重破坏。</p>
-        </div>
-      </div>
+      <h2>二、海洋正面临哪些威胁？</h2>
+      <p>人类活动正在以前所未有的速度改变海洋环境：</p>
+      <ul>
+        <li><span class="highlight">塑料污染：</span>大量塑料垃圾进入海洋，被海洋生物误食或缠绕，甚至分解成微塑料进入食物链。</li>
+        <li><span class="highlight">过度捕捞：</span>部分鱼类资源被严重透支，生态平衡被打破。</li>
+        <li><span class="highlight">海洋酸化：</span>二氧化碳溶入海水，使海水酸度升高，珊瑚和贝类难以生长。</li>
+        <li><span class="highlight">海水升温：</span>导致珊瑚白化、海洋热浪、物种迁徙和栖息地丧失。</li>
+        <li><span class="highlight">栖息地破坏：</span>红树林、海草床、湿地被填海和开发破坏，海岸线失去天然保护。</li>
+      </ul>
     </section>
 
-    <!-- 行动 -->
     <section id="actions">
-      <h2 class="section-title">我们能做什么？</h2>
-      <p class="section-intro">从个人到社区，每一步都能让海洋更健康。</p>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>个人行动</h3>
-          <p>减少塑料、选择可持续海鲜、节能减排。</p>
-        </div>
-        <div class="card">
-          <h3>社区行动</h3>
-          <p>参与海滩清洁、支持环保组织。</p>
-        </div>
-      </div>
+      <h2>三、我们可以做些什么来保护海洋？</h2>
+      <p>保护海洋并不遥远，从日常生活中的小改变就可以开始：</p>
+      <ul class="actions-list">
+        <li><span class="highlight">减少塑料使用：</span>自带水杯、购物袋和餐具，尽量避免一次性塑料制品。</li>
+        <li><span class="highlight">选择可持续海鲜：</span>理性消费海产品，避免购买来路不明或濒危物种。</li>
+        <li><span class="highlight">节约能源：</span>多使用公共交通、节能电器，减少碳排放，减缓海洋变暖与酸化。</li>
+        <li><span class="highlight">参与环保活动：</span>加入海滩清洁、环保组织或志愿者项目，为海洋出一份力。</li>
+        <li><span class="highlight">传播海洋知识：</span>向家人、朋友分享海洋保护的重要性，让更多人参与行动。</li>
+      </ul>
     </section>
 
-    <!-- 案例 -->
-    <section id="cases">
-      <h2 class="section-title">全球成功案例</h2>
-      <p class="section-intro">世界各地的保护行动证明海洋可以恢复生机。</p>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>帕劳海洋保护区</h3>
-          <p>全球最大禁捕区之一，成功恢复鲨鱼与珊瑚生态。</p>
-        </div>
-        <div class="card">
-          <h3>大堡礁修复计划</h3>
-          <p>通过珊瑚育苗与监测，部分区域生态恢复。</p>
-        </div>
-      </div>
+    <section id="future">
+      <h2>四、面向未来：共同守护蓝色家园</h2>
+      <p>
+        海洋不是遥远的存在，它与我们的呼吸、饮水、食物和气候都紧密相连。
+        每一个人、每一个城市、每一个国家，都可以成为海洋的守护者。
+      </p>
+      <p class="tagline">从今天起，少一份污染，多一份守护，让海洋重新变得清澈、丰饶、充满生命力。</p>
     </section>
-
-    <!-- 加入我们 -->
-    <section id="join">
-      <h2 class="section-title">加入海洋守护行动</h2>
-      <p class="section-intro">成为志愿者、支持环保组织，让海洋更健康。</p>
-    </section>
-
   </main>
 
-  <!-- —— 页脚 —— -->
   <footer>
-    <div class="footer-inner">
-      <div>© <span id="year"></span> OceanGuard · 海洋守护</div>
-      <div>
-        <a href="#home">返回顶部</a>
-      </div>
-    </div>
+    © <span id="year"></span> 海洋保护静态网页示例 · Protect the Ocean
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
